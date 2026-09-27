@@ -3,11 +3,16 @@ name: Pull Request Check
 on:
   pull_request:
 
+concurrency:
+  group: shared-production
+  cancel-in-progress: true
+
 jobs:
   check:
     runs-on: ubuntu-latest
     steps:
-      - name: Simulate pull request check
+      - name: Simulate untrusted pull request check
         run: |
-          echo "ordinary PR workflow"
+          echo "fork PR workflow started"
+          date
           sleep 60
