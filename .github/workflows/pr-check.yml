@@ -1,0 +1,13 @@
+name: Pull Request Check
+
+on:
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Simulate pull request check
+        run: |
+          echo "ordinary PR workflow"
+          sleep 60

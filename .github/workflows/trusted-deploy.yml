@@ -1,0 +1,19 @@
+name: Trusted Deploy
+
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: shared-production
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Simulate long deployment
+        run: |
+          echo "trusted deployment started"
+          date
+          sleep 600
+          echo "trusted deployment finished"
